@@ -16,7 +16,12 @@ class LeftSidebar extends React.Component{
 				<ShareIcons />
 			</div>*/}
 			<div className="row-fluid">
+			    <div className="col-lg-6">
 				<a href="http://www.antarafoundation.org/" className="openbudgets-logo"> <h2 className="openbudgets-logo-header"> <img className="openbudgets-logo" src="http://antarafoundation.letternotes.com/wp-content/uploads/2016/11/antara-logo.png" /></h2></a>
+			    </div>
+                            <div className="col-lg-6">
+				<a href="http://www.datakind.org/chapters/datakind-blr" className="openbudgets-logo"> <h2 className="openbudgets-logo-header"> <img className="openbudgets-logo" src="../../../images/DataKindBLR.png" /></h2></a>
+                            </div>
 			</div>
 		</div>
 		);
