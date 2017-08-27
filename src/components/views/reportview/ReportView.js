@@ -86,7 +86,8 @@ constructor(){
     this.state = {
 		vizActive:true
 	};
-	this.showAdditionalDetails =this.showAdditionalDetails.bind(this);
+
+	//this.showAdditionalDetails =this.showAdditionalDetails.bind(this);
 }
 
 showAdditionalDetails(){
@@ -159,7 +160,9 @@ render(){
 
 			</div>
 			<div id="addtional-notes">
+                        {/*
 			{this.props.recordNotes.source ? "Source : " + this.props.recordNotes.source : null}
+                        */}
 			</div>
 		</div>	
 		);
