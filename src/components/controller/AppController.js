@@ -23,12 +23,12 @@ class AppController extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.onChangeBudgetAttr =this.onChangeBudgetAttr.bind(this);
         this.setCategoryName = this.setCategoryName.bind(this);
-        this.setNotes = this.setNotes.bind(this);
+        //this.setNotes = this.setNotes.bind(this);
         this.setCategorySlug = this.setCategorySlug.bind(this);
         this.setRecordSlug = this.setRecordSlug.bind(this);
         this.setRecordData = this.setRecordData.bind(this);
         this.setYearChange = this.setYearChange.bind(this);
-        this.setAdditionalDetails = this.setAdditionalDetails.bind(this);
+        //this.setAdditionalDetails = this.setAdditionalDetails.bind(this);
     }
 
     componentWillMount(){    
@@ -38,12 +38,12 @@ class AppController extends React.Component {
             categorySlug : this.props.params.category,
             recordSlug : this.props.params.record,
             series : this.props.route.panelName});
-        this.setNotes();
-        this.setAdditionalDetails();
+        //this.setNotes();
+        //this.setAdditionalDetails();
     }
 
     componentDidUpdate(prevProps, prevState) {    
-        //
+    
         if(prevState.categorySlug != this.props.params.category && this.props.params.heirarchy_level == 2){
             this.setCategorySlug();
             this.setCategoryName();
@@ -55,15 +55,15 @@ class AppController extends React.Component {
         }
 
         if(prevState.categorySlug != this.props.params.category || prevState.recordSlug != this.props.params.record || prevState.heirarchyLevel != this.props.params.heirarchy_level){
-            this.setNotes();
+            //this.setNotes();
         }
         
         if(prevProps.params.category != this.props.params.category && this.state.heirarchyLevel == 2){
-            this.setAdditionalDetails();
+            //this.setAdditionalDetails();
         }
         
         if(prevProps.params.record != this.props.params.record && this.state.heirarchyLevel == 1){
-            this.setAdditionalDetails();
+            //this.setAdditionalDetails();
         }
     }
     setCategorySlug(){
@@ -172,6 +172,12 @@ class AppController extends React.Component {
         this.setState({selectedYear:value});
     }
 
+
+/*
+
+                                additionalDetails={this.state.addtional_details}
+
+*/
     render() {
         return ( 
             <div>
@@ -185,7 +191,6 @@ class AppController extends React.Component {
                                 recordNotes={this.state.recordNotes} 
                                 setYearChange={this.setYearChange} 
                                 selectedYear={this.state.selectedYear} 
-                                additionalDetails={this.state.addtional_details}
                      />
                 </div>
                 <div className = "col-lg-2 rightsidebar" >

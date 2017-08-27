@@ -59,14 +59,16 @@ class RightSidebar extends React.Component{
 					</div>
 				</div>
 				<div className="row-fluid estimates-fig-wrapper">
+                                        {/*			
 					<div className="row-fluid">
 						<span className="budget-attr-span rightsidebar-titles"><b>Budget Attributes :</b></span>
-					</div>			
+					</div>
 					<div className="btn-group button-grps btn-group-vertical" data-toggle="buttons">
 						<button type="button" value="BE" className={this.state.budgetAttribute==="BE" ? "btn btn-default focus active" : "btn btn-default"}  onClick ={this.handleBudgetAttrChange} > Budget Estimates</button>
 						<button type="button" value="RE" className={this.state.budgetAttribute==="RE" ? "btn btn-default focus active" : "btn btn-default"} onClick ={this.handleBudgetAttrChange} >Revised Estimates</button>
 						<button type="button" value="A" className={this.state.budgetAttribute==="A" ? "btn btn-default focus active" : "btn btn-default"}  onClick ={this.handleBudgetAttrChange} >Actuals</button>
 					</div>
+                                        */}
 				</div>
 				<div className="row misc-buttons-wrapper">
 					<div className="row  ">

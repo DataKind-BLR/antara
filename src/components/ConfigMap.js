@@ -1,7 +1,5 @@
-import { receipts_data } from "../data/receipts_data";
-import { expenditure_data }  from "../data/expenditure_data";
+import { indicator_data }  from "../data/kishanganj_shc_pcts_data";
 import { expenditure_metadata } from "../data/expenditure_metadata";
-import { receipts_metadata } from "../data/receipts_metadata";
 import { expenditure_concordance_data } from "../data/expenditure_concordance_data";
 import { DataKindBLR } from "../styles/DataKindBLR.png";
 let appConfig = {
@@ -75,7 +73,7 @@ let leftSideBarComponent = {
 			"title" : "Indicator",
 			"title_slug" : "indicator",
 			"heirarchy_level" : "2",
-			"data" : expenditure_data	
+			"data" : indicator_data	
 		}
 		]
 	}
@@ -86,7 +84,7 @@ let appController = {
 		"title" : "Indicator",
 		"title_slug" : "indicator",
 		"heirarchy_level" : "2",
-		"data" : expenditure_data,
+		"data" : indicator_data,
 		"primary_header" : "record",
 		"secondary_header" : "category_name",
 		"meta_data" : expenditure_metadata,

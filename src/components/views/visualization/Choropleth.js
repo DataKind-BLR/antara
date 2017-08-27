@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {TopojsonData} from '../../../data/StatesTopojson';
+import {TopojsonData} from '../../../data/kishanganj_shc_topojson';
 import {
   Circle,
   FeatureGroup,
@@ -14,11 +14,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 let config = {};
 
 config.params = {
-  center: [23.59, 81.96],
+  center: [25.09, 76.65],
   zoomControl:true,
-  zoom: 4,
-  maxZoom: 5,
-  minZoom: 4,
+  zoom: 10,
+  maxZoom: 13,
+  minZoom: 9,
   scrollwheel: false,
   legends: true,
   infoControl: true,
@@ -30,7 +30,7 @@ config.tileLayer = {
   uri: 'https://api.mapbox.com/styles/v1/suchismitanaik/cj1nivbus001x2sqqlhmct7du/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3VjaGlzbWl0YW5haWsiLCJhIjoiY2lqMmZ5N2N5MDAwZnVna25hcjE2b2Q1eCJ9.IYx8Zoc0yNPcp7Snd7yW2A',
   params: {
     minZoom: 4,
-    attribution: '  © <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    attribution: '  <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     id: '',
     accessToken: ''
   }
@@ -212,13 +212,13 @@ export default class Choropleth extends Component {
   }
 
   mungeData(){
-    let GeoJSONData = new topojson.feature(TopojsonData, TopojsonData.objects.india_state_boundaries);
+    let GeoJSONData = new topojson.feature(TopojsonData, TopojsonData.objects.shc_boundaries);
     let record = this.props.data.record_figures;
     let budgetAttr = this.props.budgetAttr;
     let MappedFigures = new Array();
     MappedFigures = GeoJSONData.features.map(function(state, index){      
       let temp = record.find(function(x){
-      if(x.grpby_name==state.properties.NAME_1)
+      if(x.grpby_name.toLowerCase()==state.properties.name.toLowerCase())
       {   
           return x;
       }
@@ -227,7 +227,7 @@ export default class Choropleth extends Component {
           }
       });
       for ( let variable in state.properties ){
-        if (variable != "HASC_1" && variable != "NAME_1")
+        if (variable != "villages" && variable != "name")
         {
           delete state.properties[variable];
         }
@@ -331,7 +331,7 @@ export default class Choropleth extends Component {
   }
 
   setToolTipContent(values){
-    this.setState({hoverstate:values.feature.properties.NAME_1 , hoverFigure:values.feature.properties[this.state.selectedYear]});
+    this.setState({hoverstate:values.feature.properties.name , hoverFigure:values.feature.properties[this.state.selectedYear]});
   }
 
   resetTooltipContent(){
@@ -365,7 +365,7 @@ render (){
             data={this.state.selectedFigure} 
             weight={config.geojson.weight} 
             style={this.getstyle}
-            valueProperty={(feature) => feature.properties.NAME_1}
+            valueProperty={(feature) => feature.properties.name}
             onEachFeature={this.onEachFeature.bind(null, this)}
             ref="geojson"/>
           </FeatureGroup>
@@ -385,7 +385,7 @@ render (){
             </div>
           </div>
           <div className="license-text">
-            License - <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a> | <a href="https://openbudgetsindia.org" target="_blank">Open Budgets India</a>
+            License - <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a> | <a href="http://www.datakind.org/chapters/datakind-blr" target="_blank">DataKind Bangalore</a>
           </div>
         </Map>
 
