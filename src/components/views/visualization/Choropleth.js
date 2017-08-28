@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 let config = {};
 
 config.params = {
-  center: [25.09, 76.65],
+  center: [25.09, 76.8],
   zoomControl:true,
   zoom: 10,
   maxZoom: 13,
