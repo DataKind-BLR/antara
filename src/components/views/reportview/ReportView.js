@@ -128,7 +128,10 @@ render(){
 							}
 							</span>
 							<span className="add-detail-2">
-								{attributeKey[this.props.budgetAttr]}
+                                                                Kishanganj
+								{/*
+                                                                {attributeKey[this.props.budgetAttr]}
+                                                                */}
 							</span>
 						</h5>
 					</div>

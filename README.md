@@ -25,5 +25,12 @@ Video: https://youtu.be/mGm0Z_JM80g
 * We are working to generate village boundaries for Rajasthan so that we can visualize these indicators on Map.
 * We would be working to fork another DataKind Project, [CBGA Story Generator](https://github.com/cbgaindia/story-generator) and furbish for our scope in subsequent weekends.
 
+## Development Setup:
+* **Clone this repository.** - `git clone https://github.com/DataKind-BLR/antara.git` or [download the zip](https://github.com/DataKind-BLR/antara.git)
+* **Change to the repo directory** - `cd antara`
+* **Install Node Packages.** - `npm install`
+* **Run the app.** - `npm start -s`
+* **Generate Build** - `npm run build`
+
 ## Join Us
 We are looking for volunteers experienced in Python, React.js, Design and Map Skills. Please join us on [Slack](dkblr-slack.herokuapp.com) where have a dedicated channel for live conversation on the project. We would soon update the contribution guidelines here.
