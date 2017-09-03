@@ -66,7 +66,7 @@ class StateToolTip extends React.Component{
   render(){ 
     if (this.props.statetooltip==null){
       return(
-        <div className="statetoolPanelHeading">Please select a state from the map</div>
+        <div className="statetoolPanelHeading">Select a Sub Centre from the Map</div>
       );
     }
     return(

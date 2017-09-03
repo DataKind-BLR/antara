@@ -126,7 +126,7 @@ render (){
           <div className="row">
             <div className="select-container">
               <div className="col-lg-12 state-select">
-                <Select multi={true} simpleValue value={this.state.value} placeholder="Select a State" options={this.state.stateOptions} onChange={this.handleSelectChange} />
+                <Select multi={true} simpleValue value={this.state.value} placeholder="Select a Sub Centre" options={this.state.stateOptions} onChange={this.handleSelectChange} />
               </div>
             </div>
           </div>
@@ -169,7 +169,7 @@ render (){
                 })
               } 
              
-              <XAxis title="Fiscal Years" />
+              <XAxis title="Month(s)" />
               <YAxis title ="Indicator"/>
 
               {this.state.hoverValue ? 
@@ -178,7 +178,7 @@ render (){
                     <div>
                       <span className="rv-hint__title"> {this.state.hoverValue.grpby_name}</span>
                       <br />
-                      <span className="rv-hint__title">Fiscal Year : </span>
+                      <span className="rv-hint__title">Month(s) : </span>
                       <span className="rv-hint__value">{this.state.hoverValue.x}</span>
                     </div>
                     <div>
@@ -194,7 +194,7 @@ render (){
           ):
             (<div className="col-lg-12 select-placeholder">
               <div className="jumbotron">
-                <h2 className="text-center">Select states to generate Visualization</h2>
+                <h2 className="text-center">Select Sub Centre to generate Visualization</h2>
               </div>
             </div>
             )
