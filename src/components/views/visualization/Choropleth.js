@@ -201,6 +201,8 @@ export default class Choropleth extends Component {
       }
       })) ;
      min = min - min*0.1;
+
+     /*
      let retvalue = {
       "20%":[min,min+(20*(max-min))/100,1],
        "40%":[min+(20*(max-min))/100,min+(40*(max-min))/100,2],
@@ -208,6 +210,13 @@ export default class Choropleth extends Component {
        "80%":[min+(60*(max-min))/100,min+(80*(max-min))/100,4],
        "100%":[min+(80*(max-min))/100,min+(100*(max-min))/100,5]
        };
+      */
+      let retvalue = {
+       "25%":[0,25,1],
+       "50%":[26,50,2],
+       "75%":[51,75,3],
+       "100%":[76,500,4]
+        };
       this.setState({bandFigures:retvalue});
   }
 
@@ -265,19 +274,16 @@ export default class Choropleth extends Component {
       return "#BFBFBF";
      }
      if(band===1){
-      return "#B3EAFF";
+      return "#FF0000";
      }
      if(band===2){
-      return "#73D9FF";
+      return "#FFC000";
      }
      if(band===3){
-      return "#40C1F3";
+      return "#ED7D31";
      }
      if(band===4){
-      return "#4094B3";
-     }
-     if(band===5){
-      return "#406573 ";
+      return "#70AD47";
      }
    }
 
@@ -373,11 +379,10 @@ render (){
           <div className="legendcontainer">
              <div className="legend-scale">
                 <ul className="legend-labels">
-                  <LegendStep bgColor="#B3EAFF" band="20%" range={this.state.bandFigures["20%"]}/>
-                  <LegendStep bgColor="#73D9FF" band="40%" range={this.state.bandFigures["40%"]}/>
-                  <LegendStep bgColor="#40C1F3" band="60%" range={this.state.bandFigures["60%"]}/>
-                  <LegendStep bgColor="#4094B3" band="80%" range={this.state.bandFigures["80%"]}/>
-                  <LegendStep bgColor="#406573" band="100%" range={this.state.bandFigures["100%"]}/>
+                  <LegendStep bgColor="#FF0000" band="25%" range={this.state.bandFigures["25%"]}/>
+                  <LegendStep bgColor="#ED7D31" band="50%" range={this.state.bandFigures["50%"]}/>
+                  <LegendStep bgColor="#FFC000" band="75%" range={this.state.bandFigures["75%"]}/>
+                  <LegendStep bgColor="#70AD47" band="100%" range={this.state.bandFigures["100%"]}/>
                   <li>
                     <span className="legendspanside" style={{"background" :"#BFBFBF"}}>Data Unavailable</span>
                   </li>
