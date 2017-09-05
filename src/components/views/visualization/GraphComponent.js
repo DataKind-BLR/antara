@@ -40,6 +40,8 @@ class GraphComponent extends React.Component {
       this.onBarHover =this.onBarHover.bind(this);
       this.outBarHover = this.outBarHover.bind(this);
       this.setBudgetAttr = this.setBudgetAttr.bind(this);
+      this.fillColor = this.fillColor.bind(this);
+
     }
 
     componentWillMount(){
@@ -116,10 +118,29 @@ class GraphComponent extends React.Component {
       this.setState({ value });
     }
 
+    fillColor(value){
+        if (value===0 ||value==null){
+            return "#BFBFBF";
+        }
+        if(value <= 25){
+            return "#FF0000";
+        }
+        if(value > 25 && value <= 50){
+            return "#FFC000";
+        }
+        if(value > 50 && value <= 75){
+            return "#ED7D31";
+        }
+        if(value > 75){
+            return "#70AD47";
+        }
+    }
+
 render (){
     let accessthis =this;
     const attributeKey = {"BE":" Budget Estimates", "RE":"Revised Estimates", "A":"Actuals"};
     const color = ['#26393D','#40627C','#D0A825','#D64700','#002A4A','#A7A37E','#B9121B','#1B1E26'].reverse();
+
     return(
      <div className="vis-wrapper">
         <div className="container-fluid graph-container">
@@ -136,7 +157,8 @@ render (){
               <DiscreteColorLegend
                 orientation="horizontal"
                 items={this.state.selectedFigures.map(function(value,index){
-                  return {title: value.name, color:color[index]};
+                  let figure = value.figures[0].y;
+                  return {title: value.name, color:accessthis.fillColor(figure)};
                   })
                 }
               />
@@ -156,14 +178,15 @@ render (){
                 
                 <VerticalGridLines />
                 {this.state.selectedFigures.map(function(state, index){ 
-               
+                let figure = state.figures[0].y;
                 return(
                   <VerticalBarSeries
-                    color={color[index]}
+                    color={accessthis.fillColor(figure)}
                     onValueMouseOver = {accessthis.onBarHover}
                     onValueMouseOut = {accessthis.outBarHover}
                     data={state.figures}
                     key={state.name}
+                    stroke={"grey"}
                     />
                     );
                 })
