@@ -131,7 +131,7 @@ class GenerateJsonData(object):
                 record['record_figures'] = []
                 cols = meta_cols + [row['Target Column']]
                 for _, sub_row in data[cols].iterrows():
-                    figures = {'BE': [{'2016-17': sub_row[row['Target Column']]}]}
+                    figures = {'BE': [{'May, 2017-18': sub_row[row['Target Column']]}]}
                     record['record_figures'].append({
                         'figures': figures,
                         'grpby_name': sub_row['SHC'],
