@@ -17,7 +17,7 @@ let homeComponent = {
 		"alt":"Antara Foundation Logo",
 		"image_name":"Antara Foundation Logo",
 		"id":"openbudgetsindia_logo",
-		"height": "35",
+		"height": "50",
 		"link":"http://www.antarafoundation.org/"
 	},{
 		"url": "images/DataKindBLR.png",

@@ -213,9 +213,9 @@ export default class Choropleth extends Component {
       */
       let retvalue = {
        "25%":[0,25,1],
-       "50%":[26,50,2],
-       "75%":[51,75,3],
-       "100%":[76,500,4]
+       "50%":[25,50,2],
+       "75%":[50,75,3],
+       "100%":[75,500,4]
         };
       this.setState({bandFigures:retvalue});
   }
