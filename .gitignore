@@ -20,3 +20,13 @@ org.datakind.cbga/
 web_app/
 .node-version
 .DS_Store
+
+# Vim swap files
+*.swp
+
+# Data Files
+data/*
+
+# Ipython notebooks
+notebooks/*
+*.ipynb

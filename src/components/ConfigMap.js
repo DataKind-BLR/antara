@@ -13,11 +13,11 @@ let homeComponent = {
 	"secondary_header" : "Story Generator", // Text 
 	"description" : "This tool enables better tracking of maternal and child health indicators on a Block Map.",
 	"contributor_organizations" : [{
-		"url": "http://antarafoundation.letternotes.com/wp-content/uploads/2016/11/antara-logo.png",
+		"url": "http://www.antarafoundation.org/wp-content/uploads/2017/08/Antara-Revised-Logo.jpg",
 		"alt":"Antara Foundation Logo",
 		"image_name":"Antara Foundation Logo",
 		"id":"openbudgetsindia_logo",
-		"height": "35",
+		"height": "50",
 		"link":"http://www.antarafoundation.org/"
 	},{
 		"url": "images/DataKindBLR.png",
@@ -37,14 +37,14 @@ let leftSideBarComponent = {
 			"release_version" : "ALPHA" // Alpha/PreALPHA/BETA	
 		},
 		"img_config" :{
-			"source": "http://antarafoundation.letternotes.com/wp-content/uploads/2016/11/antara-logo.png", // null if text else provide link for images.	
+			"source": "http://www.antarafoundation.org/wp-content/uploads/2017/08/Antara-Revised-Logo.jpg", // null if text else provide link for images.	
 			"width": "270",
 			"height" : ""
 		}
 	},
 	"bottom_logo" : { // To represent organization logo.
 			"contributor_organizations" : [{
-			"url": "http://antarafoundation.letternotes.com/wp-content/uploads/2016/11/antara-logo.png",
+			"url": "http://www.antarafoundation.org/wp-content/uploads/2017/08/Antara-Revised-Logo.jpg",
 			"alt":"Antara Foundation Logo",
 			"image_name":"Anatara Foundation Logo",
 			"id":"openbudgetsindia_logo",

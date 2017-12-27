@@ -309,7 +309,7 @@
         border: 1px solid rgba(0, 0, 0, 0.36);
         background: white;
         width: 97%;
-        min-height: 500px;
+        min-height: 600px;
     }
     
     div#header-container {
@@ -515,7 +515,7 @@
     }
     
     .vis-wrapper {
-        min-height: 430px;
+        min-height: 500px;
     }
     
     .timeline {
@@ -563,5 +563,5 @@
     }
     
     .leaflet-container {
-        min-height: 430px;
+        min-height: 500px;
     }
